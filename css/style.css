@@ -1,0 +1,73 @@
+body {
+    background: #fff;
+    height: 1500px;
+}
+
+/* 
+    name
+    hex
+    rgb
+    rgba - alfa channel
+*/
+
+/* 
+    x = horizonakan
+    y = uxxahayatc
+*/
+
+.wrapper {
+    background-image: url("../img/bg.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 400px;
+    padding: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* 
+    padding = ներսից լիցք 
+    margin = դրսից լիցք
+*/
+
+
+.wrapper > h3{
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    word-break: keep-all;
+    color: #ddd;
+}
+
+.wrapper > p{
+    color: #fff;
+    font-size: 18px;
+    font-family: cursive;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    line-height: 30px;
+    text-transform: capitalize;
+    text-indent: 30px;
+}
+
+.wrapper > p::first-letter {
+    font-size: 50px;
+    color: red;
+    margin-right: 10px;
+}
+
+.wrapper > a {
+    color: red;
+}
+
+.wrapper > a:hover {
+    /* color: white; */
+    text-decoration: none;
+}
+
