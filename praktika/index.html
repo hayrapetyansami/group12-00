@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Practice</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .elem {
+            width: 100px;
+            height: 45px;
+            border: 4px solid #000;
+            margin: 20px 0px 20px 30px;
+            color: #fff;
+            position: relative;
+            line-height: 40px;
+            font-size: 13px;
+            font-family: arial;
+            font-style: italic;
+        }
+
+        .elem::after {
+            content: '';
+            width: 11px;
+            height: 9px;
+            background: #000;
+            position: absolute;
+            right: -11px;
+            top: 12px;
+        }
+
+        .elem::before {
+            margin-left: 3px;
+        }
+
+        .elem:nth-child(1) {
+            background: linear-gradient(to right, red 37%, white 0%);
+        }
+
+        .elem:nth-child(2) {
+            background: linear-gradient(to right, blue 54%, white 0%);
+        }
+
+        .elem:nth-child(3) {
+            background: linear-gradient(to right, orange 74%, white 0%);
+        }
+
+        .elem:nth-child(1)::before {
+            content: '37%';
+        }
+
+        .elem:nth-child(2)::before {
+            content: '54%';
+        }
+
+        .elem:nth-child(3)::before {
+            content: '74%';
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="elem"></div>
+    <div class="elem"></div>
+    <div class="elem"></div>
+</body>
+</html>
