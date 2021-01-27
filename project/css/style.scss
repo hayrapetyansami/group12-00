@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    list-style-position: inside;
+}
+
+@font-face {
+    font-family: noto-sans-bold;
+    src: url('../fonts/NotoSansArmenian-Bold.ttf');
+}
+
+@font-face {
+    font-family: noto-sans-regular;
+    src: url('../fonts/NotoSansArmenian-Regular.ttf');
+}
+
+@font-face {
+    font-family: noto-sans-medium;
+    src: url('../fonts/NotoSansArmenian-Medium.ttf');
+}
+
+@font-face {
+    font-family: noto-sans-light;
+    src: url('../fonts/NotoSansArmenian-Light.ttf');
+}
+
+@font-face {
+    font-family: noto-sans-thin;
+    src: url('../fonts/NotoSansArmenian-Thin.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// global styles start
+$darkBG : #303F9F;
+$lightBG : #3F51B5;
+$gray: #757575;
+$lightBlue: #448AFF;
+$primary: #C5CAE9;
+$divider : #BDBDBD;
+$white : #fff;
+$black : #333;
+
+p {
+    line-height: 25px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+// global styles end
+
+body {
+    color: $black;
+    font-family: noto-sans-regular, 'Roboto', sans-serif;
+    height: 4000px;
+}
+
+// nav style start
+nav {
+    background: $darkBG;
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 10px;
+        .logo {
+            color: $white;
+        }
+
+        #mobile_menu_btn {
+            display: none;
+            cursor: pointer;
+            svg {
+                width: 30px;
+                fill: $white
+            }
+        }
+
+        #nav_menu {
+            li {
+                display: inline-block;
+                list-style-type: none;
+                a{
+                    display: flex;
+                    min-height: 80px;
+                    align-items: center;
+                    color: $white;
+                    text-decoration: none;
+                    padding: 0px 15px;
+                    &:hover {
+                        background: $lightBG;
+                    }
+
+                    @media screen and (max-width: 1024px) {
+                        padding: 0px 8px;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            position: relative;
+            min-height: 80px;
+
+            .logo {
+                order: 2;
+            }
+
+            #mobile_menu_btn {
+                display: block;
+                order: 1;
+            }
+
+            #nav_menu {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                max-width: 320px;
+                background: $lightBG;
+                transform: translateX(-500px);
+                transition: all 0.5s;
+
+                &.menu_active {
+                    transform: translateX(0px);
+                    transition: all 0.5s;
+                }
+
+                li {
+                    display: block;
+
+                    a {
+                        min-height: 50px;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, .1)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// nav style end
+
+// header style start
+header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 0%;
+    background-attachment: fixed;
+    height: 500px;
+    padding-top: 80px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(28, 16, 99, 0.5);
+        z-index: 1;
+    }
+
+    .header {
+        position: relative;
+        z-index: 1;
+        form {
+            display: flex;
+            flex-wrap: wrap;;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: center;
+            height: 500px;
+            
+            input, .member_count, select {
+                padding: 10px;
+                background: $white;
+                border: none;
+                flex-basis: 24%;
+                font-size: 16px;
+                font-family: noto-sans-medium;
+                margin-bottom: 15px;
+                color: #5d5d5d;
+                min-height: 50px;
+
+                &::placeholder {
+                    color: #5d5d5d;
+                }
+
+                &[type="submit"] {
+                    flex-basis: 100%;
+                    background: orange;
+                    border-color: orange;
+                    color: $white;
+                    cursor: pointer;
+                }
+
+                @media screen and (max-width: 580px) {
+                    flex-basis: 100%;
+                }
+            }
+
+            .member_count {
+                position: relative;
+                cursor: pointer;
+
+                .member_count_options{
+                    display: none;
+                    position: absolute;
+                    top: 48px;
+                    left: 0px;
+                    right: 0;
+                    background: $white;
+                    width: 100%;
+                    padding: 5px;
+                    border-top: 2px solid $divider;
+
+                    .mco_item {
+                        margin: 8px 0px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .mco_counter {
+                            button {
+                                padding: 5px 10px;
+                                background: $primary;
+                                color: $white;
+                                border: none;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// header style end

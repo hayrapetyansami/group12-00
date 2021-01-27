@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: 0;
+  list-style-position: inside;
+}
+
+@font-face {
+  font-family: noto-sans-bold;
+  src: url("../fonts/NotoSansArmenian-Bold.ttf");
+}
+
+@font-face {
+  font-family: noto-sans-regular;
+  src: url("../fonts/NotoSansArmenian-Regular.ttf");
+}
+
+@font-face {
+  font-family: noto-sans-medium;
+  src: url("../fonts/NotoSansArmenian-Medium.ttf");
+}
+
+@font-face {
+  font-family: noto-sans-light;
+  src: url("../fonts/NotoSansArmenian-Light.ttf");
+}
+
+@font-face {
+  font-family: noto-sans-thin;
+  src: url("../fonts/NotoSansArmenian-Thin.ttf");
+}
+
+p {
+  line-height: 25px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+body {
+  color: #333;
+  font-family: noto-sans-regular, 'Roboto', sans-serif;
+  height: 4000px;
+}
+
+nav {
+  background: #303F9F;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+}
+
+nav .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 10px;
+}
+
+nav .nav .logo {
+  color: #fff;
+}
+
+nav .nav #mobile_menu_btn {
+  display: none;
+  cursor: pointer;
+}
+
+nav .nav #mobile_menu_btn svg {
+  width: 30px;
+  fill: #fff;
+}
+
+nav .nav #nav_menu li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav .nav #nav_menu li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 0px 15px;
+}
+
+nav .nav #nav_menu li a:hover {
+  background: #3F51B5;
+}
+
+@media screen and (max-width: 1024px) {
+  nav .nav #nav_menu li a {
+    padding: 0px 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav {
+    position: relative;
+    min-height: 80px;
+  }
+  nav .nav .logo {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  nav .nav #mobile_menu_btn {
+    display: block;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  nav .nav #nav_menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    max-width: 320px;
+    background: #3F51B5;
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  nav .nav #nav_menu.menu_active {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  nav .nav #nav_menu li {
+    display: block;
+  }
+  nav .nav #nav_menu li a {
+    min-height: 50px;
+  }
+  nav .nav #nav_menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+header {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 0%;
+  background-attachment: fixed;
+  height: 500px;
+  padding-top: 80px;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 16, 99, 0.5);
+  z-index: 1;
+}
+
+header .header {
+  position: relative;
+  z-index: 1;
+}
+
+header .header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 500px;
+}
+
+header .header form input, header .header form .member_count, header .header form select {
+  padding: 10px;
+  background: #fff;
+  border: none;
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
+  font-size: 16px;
+  font-family: noto-sans-medium;
+  margin-bottom: 15px;
+  color: #5d5d5d;
+  min-height: 50px;
+}
+
+header .header form input::-webkit-input-placeholder, header .header form .member_count::-webkit-input-placeholder, header .header form select::-webkit-input-placeholder {
+  color: #5d5d5d;
+}
+
+header .header form input:-ms-input-placeholder, header .header form .member_count:-ms-input-placeholder, header .header form select:-ms-input-placeholder {
+  color: #5d5d5d;
+}
+
+header .header form input::-ms-input-placeholder, header .header form .member_count::-ms-input-placeholder, header .header form select::-ms-input-placeholder {
+  color: #5d5d5d;
+}
+
+header .header form input::placeholder, header .header form .member_count::placeholder, header .header form select::placeholder {
+  color: #5d5d5d;
+}
+
+header .header form input[type="submit"], header .header form .member_count[type="submit"], header .header form select[type="submit"] {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background: orange;
+  border-color: orange;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 580px) {
+  header .header form input, header .header form .member_count, header .header form select {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+header .header form .member_count {
+  position: relative;
+  cursor: pointer;
+}
+
+header .header form .member_count .member_count_options {
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0px;
+  right: 0;
+  background: #fff;
+  width: 100%;
+  padding: 5px;
+  border-top: 2px solid #BDBDBD;
+}
+
+header .header form .member_count .member_count_options .mco_item {
+  margin: 8px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header form .member_count .member_count_options .mco_item .mco_counter button {
+  padding: 5px 10px;
+  background: #C5CAE9;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
