@@ -1,0 +1,29 @@
+1. create git account
+
+// global nshanakaum a dzer comepi bolor fileri mej
+2. git config --global user.name 'hayrapetyanstyle'
+3. git config --global user.email 'hayrapetyanstyle@gmail.com'
+4. password
+
+// amen folder unena ira arandzin githube ogtagorcum eq local
+2.1 git config --local user.name 'someusername'
+3.1 git config --local user.email 'some@gmail.com'
+3.2 password
+
+5. git init
+6. git status
+7. git add -A 
+8. git commit 'dzer commit@'
+
+//  ete duq arden arel eq nerqevi 3 qayle, hajordiv bolor pushere karaq greq parzapes git push
+9. git push 
+
+// ete dzer repositoryn nor a, anum eq hetevyal 3 qayle
+9.1 git remote add origin https://github.com/HayrapetyanStyle/my-test.git
+9.2 git branch -M main
+9.3 git push -u origin main
+
+
+somelese
+else.some@mail.ru
+Test#123456
