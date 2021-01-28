@@ -3,52 +3,9 @@ window.addEventListener('load', () => {
     const navMenu = document.querySelector('#nav_menu');
     const memberCount = document.querySelector('.member_count');
     const memberCountOptions = document.querySelector('.member_count_options');
-    const adulsCounter = document.querySelector('#adulsCounter');
-    const childCounter = document.querySelector('#childCounter');
-    const roomCounter = document.querySelector('#roomCounter');
-
-    const minutAdult = document.querySelector('[data-minus-adult]');
-    const plusAdult = document.querySelector('[data-plus-adult]');
-
-    const minuschild = document.querySelector('[data-minus-child]');
-    const pluschild = document.querySelector('[data-plus-child]');
-
-    const minusRoom = document.querySelector('[data-minus-room]');
-    const plusRoom = document.querySelector('[data-plus-room]');
-
-    let adult = 0;
-    let child = 0;
-    let room = 0;
-
-    minutAdult.addEventListener ('click', () => {
-        if (adulsCounter.innerHTML != 0) {
-            adulsCounter.innerHTML = --adult;
-        }
-    });
-
-    plusAdult.addEventListener ('click', () => {
-        if (adulsCounter.innerHTML <= 9) {
-            adulsCounter.innerHTML = ++adult;
-        }
-    });
-
-    minuschild.addEventListener ('click', () => {
-        childCounter.innerHTML = --child;
-    });
-
-    pluschild.addEventListener ('click', () => {
-        childCounter.innerHTML = ++child;
-    });
-
-    minusRoom.addEventListener ('click', () => {
-        roomCounter.innerHTML = --room;
-    });
-
-    plusRoom.addEventListener ('click', () => {
-        roomCounter.innerHTML = ++room;
-    });
-
-
+    const minusBtn = document.querySelectorAll('[data-minus]');
+    const plusBtn = document.querySelectorAll('[data-plus]');
+    const counterResault = document.querySelectorAll('[data-resault]');
 
     mobileMenuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('menu_active');
@@ -57,5 +14,25 @@ window.addEventListener('load', () => {
     memberCount.addEventListener('click', () => {
         memberCountOptions.style.display = 'block';
     });
+
+    const counterFilter = (minus, plus, resault) => {
+        let i = 0;
+
+        minus.addEventListener('click', () => {
+            if (resault.innerHTML >= 1) {
+                resault.innerHTML = --i;
+            }
+        });
+
+        plus.addEventListener('click', () => {
+            if (resault.innerHTML <= 8) {
+                resault.innerHTML = ++i;
+            }
+        });
+    };
+
+    counterFilter(minusBtn[0], plusBtn[0], counterResault[0]);
+    counterFilter(minusBtn[1], plusBtn[1], counterResault[1]);
+    counterFilter(minusBtn[2], plusBtn[2], counterResault[2]);
 
 });
