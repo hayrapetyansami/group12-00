@@ -43,10 +43,31 @@ p {
   padding: 10px;
 }
 
+.title {
+  font-size: 28px;
+  color: #448AFF;
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 6px;
+  background: #448AFF;
+}
+
+.ms_style {
+  margin: 20px 0px 50px 0px;
+}
+
 body {
   color: #333;
   font-family: noto-sans-regular, 'Roboto', sans-serif;
-  height: 4000px;
 }
 
 nav {
@@ -164,6 +185,7 @@ header {
   background-attachment: fixed;
   height: 500px;
   padding-top: 80px;
+  overflow: hidden;
 }
 
 header::before {
@@ -194,7 +216,7 @@ header .header form {
           align-items: flex-start;
   -ms-flex-line-pack: center;
       align-content: center;
-  height: 500px;
+  height: 400px;
 }
 
 header .header form input, header .header form .member_count, header .header form select {
@@ -235,6 +257,13 @@ header .header form input[type="submit"], header .header form .member_count[type
   cursor: pointer;
 }
 
+@media screen and (max-width: 940px) {
+  header .header form input, header .header form .member_count, header .header form select {
+    -ms-flex-preferred-size: 49%;
+        flex-basis: 49%;
+  }
+}
+
 @media screen and (max-width: 580px) {
   header .header form input, header .header form .member_count, header .header form select {
     -ms-flex-preferred-size: 100%;
@@ -259,6 +288,10 @@ header .header form .member_count .member_count_options {
   border-top: 2px solid #BDBDBD;
 }
 
+header .header form .member_count .member_count_options.member_count_active {
+  display: block;
+}
+
 header .header form .member_count .member_count_options .mco_item {
   margin: 8px 0px;
   display: -webkit-box;
@@ -275,5 +308,173 @@ header .header form .member_count .member_count_options .mco_item .mco_counter b
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+main .main .services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .main .services .services_items {
+  position: relative;
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
+  margin-bottom: 15px;
+}
+
+main .main .services .services_items img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+main .main .services .services_items .service_items_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #303f9fc4;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  text-align: center;
+}
+
+main .main .services .services_items .service_items_text h3 {
+  font-size: 20px;
+  margin: 8px;
+}
+
+main .main .services .services_items .service_items_text p {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+main .main .services .services_items .service_items_text a {
+  display: block;
+  background: #fff;
+  padding: 8px 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #303F9F;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 520px) {
+  main .main .services .services_items .service_items_text h3 {
+    font-size: 18px;
+  }
+  main .main .services .services_items .service_items_text p {
+    font-size: 15px;
+  }
+  main .main .services .services_items .service_items_text a {
+    padding: 5px 12px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  main .main .services .services_items .service_items_text h3 {
+    font-size: 16px;
+  }
+  main .main .services .services_items .service_items_text p {
+    font-size: 13px;
+  }
+  main .main .services .services_items .service_items_text a {
+    padding: 4px 8px;
+  }
+}
+
+main .main .services .services_items:hover .service_items_text {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  main .main .services .services_items {
+    -ms-flex-preferred-size: calc(100% / 2 - 8px);
+        flex-basis: calc(100% / 2 - 8px);
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main .services .services_items {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+main .main .offer_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .main .offer_items .offer_item {
+  -ms-flex-preferred-size: 32.5%;
+      flex-basis: 32.5%;
+  background: #3F51B5;
+  color: #fff;
+  padding: 20px;
+  border-radius: 40px 0px;
+  position: relative;
+}
+
+main .main .offer_items .offer_item h3 {
+  margin-bottom: 10px;
+}
+
+main .main .offer_items .offer_item button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+main .main .offer_items .offer_item button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  main .main .offer_items .offer_item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

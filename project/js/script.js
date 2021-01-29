@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     });
 
     memberCount.addEventListener('click', () => {
-        memberCountOptions.style.display = 'block';
+        memberCountOptions.classList.toggle('member_count_active');
     });
 
     const counterFilter = (minus, plus, resault) => {

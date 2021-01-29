@@ -6,6 +6,16 @@
     list-style-position: inside;
 }
 
+$darkBG : #303F9F;
+$lightBG : #3F51B5;
+$gray: #757575;
+$lightBlue: #448AFF;
+$primary: #C5CAE9;
+$divider : #BDBDBD;
+$white : #fff;
+$black : #333;
+
+
 @font-face {
     font-family: noto-sans-bold;
     src: url('../fonts/NotoSansArmenian-Bold.ttf');
@@ -45,12 +55,33 @@ p {
     padding: 10px;
 }
 
+.title {
+    font-size: 28px;
+    color: $lightBlue;
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 6px;
+        background: $lightBlue;
+    }
+}
+
+.ms_style {
+    margin: 20px 0px 50px 0px;
+}
+
 // global styles end
 
 body {
     color: $black;
     font-family: noto-sans-regular, 'Roboto', sans-serif;
-    height: 4000px;
 }
 
 // nav style start
@@ -153,6 +184,7 @@ header {
     background-attachment: fixed;
     height: 500px;
     padding-top: 80px;
+    overflow: hidden;
 
     &::before {
         content: '';
@@ -172,7 +204,7 @@ header {
             justify-content: space-between;
             align-items: flex-start;
             align-content: center;
-            height: 500px;
+            height: 400px;
             
             input, .member_count, select {
                 padding: 10px;
@@ -197,6 +229,10 @@ header {
                     cursor: pointer;
                 }
 
+                @media screen and (max-width: 940px) {
+                    flex-basis: 49%;
+                }
+
                 @media screen and (max-width: 580px) {
                     flex-basis: 100%;
                 }
@@ -217,6 +253,10 @@ header {
                     padding: 5px;
                     border-top: 2px solid $divider;
 
+                    &.member_count_active {
+                        display: block;
+                    }
+
                     .mco_item {
                         margin: 8px 0px;
                         display: flex;
@@ -233,8 +273,153 @@ header {
                         }
                     }
                 }
+                
             }
         }
     }
 }
 // header style end
+
+// masin style start
+main {
+    .main {
+        .services {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            .services_items {
+                position: relative;
+                flex-basis: 24%;
+                margin-bottom: 15px;
+                // max-height: 200px;
+
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    // object-fit: cover;
+                    // object-position: 0% 0%;
+                }
+
+                .service_items_text {
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: #303f9fc4;
+                    color: $white;
+                    opacity: 0;
+                    transition:.5s ;
+                    text-align: center;
+
+                    h3 {
+                        font-size: 20px;
+                        margin: 8px;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        margin-bottom: 14px;
+                    }
+
+                    a {
+                        display: block;
+                        background: $white;
+                        padding: 8px 15px;
+                        width: fit-content;
+                        color: $darkBG;
+                        text-decoration: none;
+                        font-size: 14px;
+                    }
+
+                    @media screen and (max-width: 520px) {
+                        h3 {
+                            font-size: 18px;
+                        }
+
+                        p{
+                            font-size: 15px;
+                        }
+
+                        a{
+                            padding: 5px 12px;
+                        }
+                    }
+
+                    @media screen and (max-width: 420px) {
+                        h3 {
+                            font-size: 16px;
+                        }
+
+                        p{
+                            font-size: 13px;
+                        }
+
+                        a{
+                            padding: 4px 8px;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .service_items_text {
+                        opacity: 1;
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    flex-basis: calc(100% / 2 - 8px);
+                    margin-bottom: 16px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    flex-basis: 100%;
+                }
+            }
+        }
+        .offer_items{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            .offer_item {
+                flex-basis: 32.5%;
+                background: $lightBG;
+                color: $white;
+                padding: 20px;
+                border-radius: 40px 0px;
+                position: relative;
+
+                h3 {
+                    margin-bottom: 10px;
+                }
+                button {
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    background: transparent;
+                    border: 2px solid $white;
+                    color: $white;
+                    transition: all .5s;
+
+                    &:hover {
+                        background:rgba(255, 255, 255, .5);
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    flex-basis: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+// masin style end
