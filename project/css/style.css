@@ -310,7 +310,7 @@ header .header form .member_count .member_count_options .mco_item .mco_counter b
   cursor: pointer;
 }
 
-main .main .services {
+main .main .services .services_items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,20 +323,20 @@ main .main .services {
           justify-content: space-between;
 }
 
-main .main .services .services_items {
+main .main .services .services_items .service_item {
   position: relative;
   -ms-flex-preferred-size: 24%;
       flex-basis: 24%;
   margin-bottom: 15px;
 }
 
-main .main .services .services_items img {
+main .main .services .services_items .service_item img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-main .main .services .services_items .service_items_text {
+main .main .services .services_items .service_item .service_items_text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,17 +363,17 @@ main .main .services .services_items .service_items_text {
   text-align: center;
 }
 
-main .main .services .services_items .service_items_text h3 {
+main .main .services .services_items .service_item .service_items_text h3 {
   font-size: 20px;
   margin: 8px;
 }
 
-main .main .services .services_items .service_items_text p {
+main .main .services .services_items .service_item .service_items_text p {
   font-size: 16px;
   margin-bottom: 14px;
 }
 
-main .main .services .services_items .service_items_text a {
+main .main .services .services_items .service_item .service_items_text a {
   display: block;
   background: #fff;
   padding: 8px 15px;
@@ -385,44 +385,69 @@ main .main .services .services_items .service_items_text a {
   font-size: 14px;
 }
 
-@media screen and (max-width: 520px) {
-  main .main .services .services_items .service_items_text h3 {
+@media screen and (max-width: 1280px) {
+  main .main .services .services_items .service_item .service_items_text h3 {
     font-size: 18px;
   }
-  main .main .services .services_items .service_items_text p {
+  main .main .services .services_items .service_item .service_items_text p {
     font-size: 15px;
   }
-  main .main .services .services_items .service_items_text a {
+  main .main .services .services_items .service_item .service_items_text a {
+    padding: 5px 12px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  main .main .services .services_items .service_item .service_items_text h3 {
+    font-size: 17px;
+  }
+  main .main .services .services_items .service_item .service_items_text p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  main .main .services .services_items .service_item .service_items_text a {
+    padding: 5px 12px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  main .main .services .services_items .service_item .service_items_text h3 {
+    font-size: 18px;
+  }
+  main .main .services .services_items .service_item .service_items_text p {
+    font-size: 15px;
+  }
+  main .main .services .services_items .service_item .service_items_text a {
     padding: 5px 12px;
   }
 }
 
 @media screen and (max-width: 420px) {
-  main .main .services .services_items .service_items_text h3 {
+  main .main .services .services_items .service_item .service_items_text h3 {
     font-size: 16px;
   }
-  main .main .services .services_items .service_items_text p {
+  main .main .services .services_items .service_item .service_items_text p {
     font-size: 13px;
   }
-  main .main .services .services_items .service_items_text a {
+  main .main .services .services_items .service_item .service_items_text a {
     padding: 4px 8px;
   }
 }
 
-main .main .services .services_items:hover .service_items_text {
+main .main .services .services_items .service_item:hover .service_items_text {
   opacity: 1;
 }
 
 @media screen and (max-width: 1024px) {
-  main .main .services .services_items {
+  main .main .services .services_items .service_item {
     -ms-flex-preferred-size: calc(100% / 2 - 8px);
         flex-basis: calc(100% / 2 - 8px);
     margin-bottom: 16px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  main .main .services .services_items {
+@media screen and (max-width: 580px) {
+  main .main .services .services_items .service_item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
