@@ -8,6 +8,14 @@
   list-style-position: inside;
 }
 
+.lg-backdrop {
+  z-index: 99999 !important;
+}
+
+.lg-outer {
+  z-index: 99999 !important;
+}
+
 @font-face {
   font-family: noto-sans-bold;
   src: url("../fonts/NotoSansArmenian-Bold.ttf");
@@ -61,6 +69,13 @@ p {
   background: #448AFF;
 }
 
+.sub_title {
+  color: #5d5d5d;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #5d5d5d;
+  margin: 24px 0px 12px 0px;
+}
+
 .ms_style {
   margin: 20px 0px 50px 0px;
 }
@@ -73,7 +88,7 @@ body {
 nav {
   background: #303F9F;
   position: fixed;
-  z-index: 99999;
+  z-index: 99998;
   width: 100%;
 }
 
@@ -501,5 +516,159 @@ main .main .offer_items .offer_item button:hover {
         flex-basis: 100%;
     margin-bottom: 20px;
   }
+}
+
+main .main .services_more .service_more_item img {
+  display: block;
+  max-width: 400px;
+  float: left;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 580px) {
+  main .main .services_more .service_more_item img {
+    float: none;
+    max-width: 100%;
+    margin-right: 0px;
+  }
+}
+
+main .main .services_more .service_more_photos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 0px;
+  margin-left: -15px;
+}
+
+main .main .services_more .service_more_photos .service_more_photos_wrap {
+  margin-right: 0px;
+  margin-left: 15px;
+  -ms-flex-preferred-size: calc(100% / 4 - 15px);
+      flex-basis: calc(100% / 4 - 15px);
+  max-height: 202px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+main .main .services_more .service_more_photos .service_more_photos_wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  main .main .services_more .service_more_photos .service_more_photos_wrap {
+    -ms-flex-preferred-size: calc(100% / 3 - 15px);
+        flex-basis: calc(100% / 3 - 15px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main .services_more .service_more_photos .service_more_photos_wrap {
+    -ms-flex-preferred-size: calc(100% / 2 - 15px);
+        flex-basis: calc(100% / 2 - 15px);
+    max-height: 300px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  main .main .services_more .service_more_photos .service_more_photos_wrap {
+    -ms-flex-preferred-size: calc(100% / 1);
+        flex-basis: calc(100% / 1);
+    max-height: unset;
+  }
+}
+
+.modal {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+
+.modal form {
+  background: #fff;
+  padding: 20px;
+  margin: 0 20px;
+  -ms-flex-preferred-size: 500px;
+      flex-basis: 500px;
+  position: relative;
+}
+
+.modal form [data-close] {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.modal form [data-close] svg {
+  width: 25px;
+  height: 25px;
+  fill: #e90101;
+}
+
+.modal form h3 {
+  margin-top: 0px;
+}
+
+.modal form [data-offerPrice] {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.modal form [data-offerPrice] span {
+  color: #e90101;
+}
+
+.modal form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.modal form input::-webkit-input-placeholder {
+  color: #5d5d5d;
+}
+
+.modal form input:-ms-input-placeholder {
+  color: #5d5d5d;
+}
+
+.modal form input::-ms-input-placeholder {
+  color: #5d5d5d;
+}
+
+.modal form input::placeholder {
+  color: #5d5d5d;
+}
+
+.modal form input[type="submit"] {
+  background: #3F51B5;
+  color: #fff;
+  border-color: #3F51B5;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
