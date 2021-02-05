@@ -135,9 +135,13 @@ nav .nav {
   padding: 0px 10px;
 }
 
-nav .nav .logo a {
-  color: #fff;
-  text-decoration: none;
+nav .nav .logo {
+  width: 170px;
+  overflow: hidden;
+}
+
+nav .nav .logo img {
+  width: 100%;
 }
 
 nav .nav #mobile_menu_btn {
