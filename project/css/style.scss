@@ -134,8 +134,18 @@ nav {
         .logo {
             width: 170px;
             overflow: hidden;
-            img {
-                width: 100%;
+
+            a{
+                img {
+                    width: 100%;
+                }
+            }
+            
+            @media screen and (max-width: 840px) {
+                width: 140px;
+            }
+            @media screen and (max-width: 768px) {
+                width: 100px;
             }
         }
 
@@ -165,6 +175,11 @@ nav {
 
                     @media screen and (max-width: 1024px) {
                         padding: 0px 8px;
+                    }
+
+                    @media screen and (max-width: 840px) {
+                        padding: 0px 4px;
+                        font-size: 15px;
                     }
                 }
             }

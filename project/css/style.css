@@ -140,8 +140,20 @@ nav .nav .logo {
   overflow: hidden;
 }
 
-nav .nav .logo img {
+nav .nav .logo a img {
   width: 100%;
+}
+
+@media screen and (max-width: 840px) {
+  nav .nav .logo {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav .logo {
+    width: 100px;
+  }
 }
 
 nav .nav #mobile_menu_btn {
@@ -179,6 +191,13 @@ nav .nav #nav_menu li a:hover {
 @media screen and (max-width: 1024px) {
   nav .nav #nav_menu li a {
     padding: 0px 8px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  nav .nav #nav_menu li a {
+    padding: 0px 4px;
+    font-size: 15px;
   }
 }
 
