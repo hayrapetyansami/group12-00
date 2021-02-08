@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
@@ -137,6 +138,91 @@ p {
   color: #303F9F;
 }
 
+.social_block {
+  position: fixed;
+  top: 30vh;
+  left: 10px;
+  padding: 10px 0px 0px 0px;
+  z-index: 555;
+  background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .social_block {
+    left: 0px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .social_block {
+    display: none;
+  }
+}
+
+.social_block p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 3px;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  color: #666;
+  position: relative;
+  padding-bottom: 55px;
+}
+
+.social_block p::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  width: 3px;
+  height: 40px;
+  background: #666;
+}
+
+.social_block li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  list-style-type: none;
+}
+
+.social_block li a {
+  display: block;
+  width: 45px;
+  height: 45px;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.social_block li a svg {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.social_block li a:hover svg {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 body {
   color: #333;
   font-family: noto-sans-regular, 'Roboto', sans-serif;
@@ -242,12 +328,24 @@ nav .nav #nav_menu [data-search] input {
   width: 100%;
 }
 
+nav .nav #logBtn svg {
+  cursor: pointer;
+  fill: #fff;
+  width: 32px;
+  height: 32px;
+}
+
 @media screen and (max-width: 768px) {
   nav .nav {
     position: relative;
     min-height: 80px;
   }
   nav .nav .logo {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  nav .nav #logBtn {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -389,6 +487,10 @@ header .header form input[type="submit"], header .header form .member_count[type
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
+}
+
+main .main {
+  position: relative;
 }
 
 main .main .services .services_items {
@@ -810,6 +912,11 @@ main .main .contact .contact_items .contact_item-info .contact_info {
   font-family: noto-sans-medium, 'Roboto';
 }
 
+main .main .contact .contact_items .contact_item-info .contact_info a {
+  color: #5d5d5d;
+  text-decoration: none;
+}
+
 main .main .contact .contact_items .contact_item-info .contact_info svg {
   width: 30px;
   height: 30px;
@@ -918,6 +1025,26 @@ main .main .about article img {
     margin-right: unset;
     margin-bottom: 10px;
   }
+}
+
+main .main .reset form {
+  margin-top: 10px;
+}
+
+main .main .reset form input {
+  padding: 10px;
+  font-size: 15px;
+}
+
+main .main .reset form input[type=text] {
+  border: 1px solid #ccc;
+}
+
+main .main .reset form input[type=submit] {
+  background: #42b983;
+  border: none;
+  cursor: pointer;
+  color: #fff;
 }
 
 footer {
@@ -1051,7 +1178,7 @@ footer .footer_bottom .container a {
   z-index: 99999;
 }
 
-.modal [data-offer-form], .modal .member_count_options {
+.modal [data-offer-form], .modal .member_count_options, .modal .login_or_reg {
   background: #fff;
   padding: 20px;
   margin: 0 20px;
@@ -1166,5 +1293,155 @@ footer .footer_bottom .container a {
   background: #3F51B5;
   color: #fff;
   border: 1px solid #3F51B5;
+}
+
+.modal .login_or_reg {
+  position: relative;
+}
+
+.modal .login_or_reg .tab_toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal .login_or_reg .tab_toggle .open_log, .modal .login_or_reg .tab_toggle .open_reg {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal .login_or_reg .tab_toggle .active_tab {
+  background: #3F51B5;
+  color: #fff;
+}
+
+.modal .login_or_reg [data-close-logmodal] {
+  text-align: center;
+  line-height: 33px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #f00;
+  color: #fff;
+  font-size: 22px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.modal .login_or_reg [data-close-logmodal]:hover {
+  background: #d00;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.modal .login_or_reg [data-log] > input, .modal .login_or_reg [data-reg] > input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+}
+
+.modal .login_or_reg [data-log] a, .modal .login_or_reg [data-reg] a {
+  font-size: 13px;
+  color: #448AFF;
+}
+
+.modal .login_or_reg [data-log] p, .modal .login_or_reg [data-reg] p {
+  font-size: 14px;
+  color: #d00;
+  margin: 10px 0px 5px 0px;
+}
+
+.modal .login_or_reg [data-log] #file, .modal .login_or_reg [data-reg] #file {
+  display: none;
+}
+
+.modal .login_or_reg [data-log] .birthday select, .modal .login_or_reg [data-reg] .birthday select {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.modal .login_or_reg [data-log] .sex label, .modal .login_or_reg [data-reg] .sex label {
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal .login_or_reg [data-log] .sex label input, .modal .login_or_reg [data-reg] .sex label input {
+  margin-right: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.modal .login_or_reg [data-log] .sex label input::before, .modal .login_or_reg [data-reg] .sex label input::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #0d8ffa;
+}
+
+.modal .login_or_reg [data-log] .sex label input::after, .modal .login_or_reg [data-reg] .sex label input::after {
+  display: none;
+  content: '✔';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  color: #fff;
+}
+
+.modal .login_or_reg [data-log] .sex label input:checked::after, .modal .login_or_reg [data-reg] .sex label input:checked::after {
+  display: block;
+}
+
+.modal .login_or_reg [data-log] [data-add-image], .modal .login_or_reg [data-reg] [data-add-image] {
+  background: #0d8ffa;
+  border-style: solid;
+  border-color: #0d8ffa;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  width: 100%;
+}
+
+.modal .login_or_reg [data-log] input[type=submit], .modal .login_or_reg [data-reg] input[type=submit] {
+  background: #42b983;
+  border-color: #42b983;
+  cursor: pointer;
+  color: #fff;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 380px) {
+  .modal .login_or_reg [data-log] .sex label, .modal .login_or_reg [data-reg] .sex label {
+    margin-right: unset;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .modal .login_or_reg [data-log] .birthday select, .modal .login_or_reg [data-reg] .birthday select {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+.modal .login_or_reg [data-reg] {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
