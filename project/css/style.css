@@ -326,6 +326,26 @@ nav .nav #nav_menu [data-search] input {
   padding: 6px;
   margin-left: 8px;
   width: 100%;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  color: #fff;
+}
+
+nav .nav #nav_menu [data-search] input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+nav .nav #nav_menu [data-search] input:-ms-input-placeholder {
+  color: #fff;
+}
+
+nav .nav #nav_menu [data-search] input::-ms-input-placeholder {
+  color: #fff;
+}
+
+nav .nav #nav_menu [data-search] input::placeholder {
+  color: #fff;
 }
 
 nav .nav #logBtn svg {
