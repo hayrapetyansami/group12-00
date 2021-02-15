@@ -1331,9 +1331,11 @@ footer {
         flex-wrap: wrap;
         margin-bottom: 25px;
         color: $white;
-        font-size: 15px; 
+        font-size: 14px; 
+
         .footer_top_item {
             flex-basis: 22%;
+
             .footer_top_item_title {
                 font-size: 21px;
                 font-family: noto-sans-medium;
@@ -1345,6 +1347,7 @@ footer {
 
             img {
                 width: 150px;
+                margin-bottom: 10px;
             }
 
             a {
